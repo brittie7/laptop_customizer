@@ -45,5 +45,5 @@ const FEATURES = {
     },
   ]
 };
-
+export {FEATURES};
 ReactDOM.render(<App features={FEATURES}/>, document.getElementById('root'));

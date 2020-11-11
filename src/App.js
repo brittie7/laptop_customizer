@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import Header from '../src/header/header.js';
 import Container from '../src/container/container';
+import Mainform from '../src/mainform/mainform';
 
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
 
 
 import './App.css';
-
+import {FEATURES} from './index';
 
 
 class App extends Component {
@@ -45,7 +46,11 @@ class App extends Component {
       return (
       <div className="App">
         <Header />
-        <Container features = {this.props.features} data = {this.state} changeFeature = {this.updateFeature} />
+        <main>
+          <Mainform features = {FEATURES} data = {this.state} changeFeature = {this.updateFeature}/>
+          <Container features = {FEATURES} data = {this.state} changeFeature = {this.updateFeature} />
+        </main>
+        
             </div>
     );
   }
