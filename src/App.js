@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../src/header/header.js';
-import Container from '../src/container/container';
+import MainSummary from '../src/mainsummary/mainsummary';
 import Mainform from '../src/mainform/mainform';
 
 // Normalizes string as a slug - a string that is safe to use
@@ -8,7 +8,7 @@ import Mainform from '../src/mainform/mainform';
 
 
 import './App.css';
-import {FEATURES} from './index';
+import {FEATURES} from './FEATURES';
 
 
 class App extends Component {
@@ -48,7 +48,7 @@ class App extends Component {
         <Header />
         <main>
           <Mainform features = {FEATURES} data = {this.state} changeFeature = {this.updateFeature}/>
-          <Container features = {FEATURES} data = {this.state} changeFeature = {this.updateFeature} />
+          <MainSummary features = {FEATURES} data = {this.state} changeFeature = {this.updateFeature} />
         </main>
         
             </div>

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+
+import React from "react";
 import slugify from 'slugify';
 
 const USCurrencyFormat = new Intl.NumberFormat('en-US', {
@@ -6,9 +7,9 @@ const USCurrencyFormat = new Intl.NumberFormat('en-US', {
   currency: 'USD'
 });
 
-export default class Choices extends Component {
+export default class Parts extends React.Component {
 
-     render(){
+    render() {
          return (
           <div key={this.props.itemHash} className="feature__item">
           <input
@@ -23,6 +24,6 @@ export default class Choices extends Component {
             {this.props.item.name} ({USCurrencyFormat.format(this.props.item.cost)})
           </label>
         </div>
-         );
-     }
+         ) 
+    }
 }

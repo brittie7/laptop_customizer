@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import slugify from 'slugify';
-import Summary from '../summary/summary';
-import Choices from '../choices/choices';
+import Option from '../option/option';
 import Total from '../total/total';
 
 // This object will allow us to
 // easily convert numbers into US dollar values
 
 
-export default class Container extends Component {
+export default class MainSummary extends Component {
   
      render(){
       // const features = Object.keys(this.props.features).map((feature, idx) => {
@@ -43,7 +41,7 @@ export default class Container extends Component {
           // </form>
           <section className="main__summary">
             <h2>Your cart</h2>
-            <Summary data = {this.props.data} />
+            <Option data = {this.props.data} />
             {/* {summary} */}
             <Total total = {total} />
           </section>

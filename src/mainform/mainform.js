@@ -1,28 +1,15 @@
 import React, {Component} from 'react';
-import Choices from '../choices/choices';
-import slugify from 'slugify';
+import TechSpec from '../techspec/techspec';
 
 export default class Mainform extends Component {
 
-    
+       
     render() {
+                                      //{FEATURES DATA}         {MAP DEF featureItem wasprobably a better name}
         const features = Object.keys(this.props.features).map((feature, idx) => {
-            const featureHash = feature + '-' + idx;
-            const options = this.props.features[feature].map(item => {
-              const itemHash = slugify(JSON.stringify(item));
-              return (
-                <Choices itemHash = {itemHash} feature = {feature} data = {this.props.data} changeFeature = {this.props.changeFeature} item = {item}/>
-          
-              );
-            });
-        
+              
             return (
-              <fieldset className="feature" key={featureHash}>
-                <legend className="feature__name">
-                  <h3>{feature}</h3>
-                </legend>
-                {options}
-              </fieldset>
+                <TechSpec features = {this.props.features} feature = {feature} data = {this.props.data} changeFeature = {this.props.changeFeature} item = {this.props.item}/>
             );
           });
 
@@ -32,6 +19,6 @@ export default class Mainform extends Component {
               <h2>Customize your laptop</h2>
               {features}
             </form>
-        );
+         );
     }
 }
